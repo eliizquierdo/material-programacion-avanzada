@@ -1,0 +1,158 @@
+/* Contenedor general del formulario */
+.form-container {
+  max-width: 640px;
+  margin: 24px auto;
+  padding: 20px;
+  background: #fff;
+  border: 2px solid #ccc;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Layout en 2 columnas: label | control */
+form {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 12px 12px;
+}
+
+/* Labels */
+form label {
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+/* Inputs y select */
+input[type="text"],
+input[type="number"],
+select {
+  height: 44px;
+  font-size: 16px;
+  padding: 0 10px;
+  border: 1px solid #cfd3d7;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+/* Botón de envío */
+input[type="submit"],
+button[type="submit"] {
+  height: 44px;
+  font-size: 16px;
+  padding: 0 18px;
+  border: 0;
+  border-radius: 10px;
+  background: #0d6efd;
+  color: #fff;
+  cursor: pointer;
+  grid-column: 2;
+  justify-self: start;
+}
+input[type="submit"]:hover,
+button[type="submit"]:hover { background: #0b5ed7; }
+
+/* Tarjeta de resultado (reusa el contenedor) */
+.result-card h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #0d6efd;
+}
+.result-card p {
+  margin: 8px 0;
+  font-size: 16px;
+}
+
+/* Botón reutilizable */
+.btn {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 10px 16px;
+  background: #0d6efd;
+  color: #fff;
+  border: 0;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 15px;
+}
+.btn:hover { background: #0b5ed7; }
+
+/* ---- Títulos ---- */
+h1 {
+  max-width: 960px;
+  margin: 24px auto 12px;
+  font-size: 40px;
+  line-height: 1.2;
+  color: #0d1635;            /* tono oscuro neutro */
+}
+
+/* ---- Contenedor de páginas (lista) ---- */
+.page-container {
+  max-width: 960px;
+  margin: 0 auto 32px;
+  padding: 0 8px;
+}
+
+/* ---- Tabla del listado ---- */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border: none; /* quitamos borde de la tabla, ya lo tiene el wrap */
+}
+
+
+.table th,
+.table td {
+  padding: 12px 14px;
+  text-align: left;
+  border-bottom: 1px solid #eef1f4;
+  font-size: 15px;
+}
+
+.table thead th {
+  background: #f1f5f9;
+  color: #0d1635;
+  font-weight: 700;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.table tbody tr:hover {
+  background: #f8fafc;
+}
+
+/* Celda de acciones: separa los links/botones */
+.table .actions a {
+  margin-right: 8px;
+}
+
+/* Botón variante contorno (para acciones inline) */
+.btn-outline {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid #0d6efd;
+  color: #0d6efd;
+  text-decoration: none;
+  font-size: 14px;
+  background: #fff;
+}
+.btn-outline:hover {
+  background: #eaf2ff;
+}
+
+/* Pequeño helper para separar bloques bajo el h1 */
+.section-gap { margin-top: 12px; }
+
+/* Responsivo: scroll horizontal suave si la tabla no entra */
+.table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-top: 12px;
+  border: 2px solid #ccc;    /* borde visible siempre */
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+
