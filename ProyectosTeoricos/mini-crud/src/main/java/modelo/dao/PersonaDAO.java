@@ -35,9 +35,9 @@ public class PersonaDAO {
         return null;
     }
 
-    public String eliminar(int cedula) {
+    public String eliminar(int codigo) {
         for (PersonaVO p : lista) {
-            if (p.getCodigo() == cedula) {
+            if (p.getCodigo() == codigo) {
                 lista.remove(p);
                 return "Persona eliminada.";
             }
@@ -68,3 +68,4 @@ public class PersonaDAO {
         return "Persona no encontrada.";
     }
 }
+
