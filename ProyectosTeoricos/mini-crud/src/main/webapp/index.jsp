@@ -12,7 +12,7 @@
         <div class="form-container">
             <h1>Bienvenido</h1>
             <!-- Página de inicio con dos botones -->
-            <a class="btn" href="persona?action=form">Agregar Persona</a>
+            <a class="btn" href="persona?action=agregar">Agregar Persona</a>
             <a class="btn" href="persona?action=listar">Listar Personas</a>
         </div>
     </body>
