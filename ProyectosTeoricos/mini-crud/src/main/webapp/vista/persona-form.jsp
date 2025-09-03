@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html; charset=UTF-8" %>
 <%
   String baseURL = request.getContextPath();
 %>
@@ -7,27 +7,25 @@
 <head>
   <meta charset="UTF-8">
   <title>Agregar Persona</title>
-  <link rel="stylesheet" href="<%= baseURL %>/css/persona.css">
+  <link rel="stylesheet" href="<%= baseURL %>/css/styles.css">
 </head>
 <body>
-  <div class="form-container">
-    <h1>Agregar Persona</h1>
+<div class="form-container">
+  <h1>Agregar Persona</h1>
+  
+  <!-- POST al Servlet con action=agregar -->
+  <form action="<%= baseURL %>/persona" method="post">
+    <input type="hidden" name="action" value="agregar">
 
-    <!-- POST al servlet con action=agregar -->
-    <form action="<%= baseURL %>/persona?action=agregar" method="post">
-      
+    <label>Código</label>
+    <input type="number" name="codigo" required>
 
-      <label for="codigo">Código:</label>
-      <input type="number" id="codigo" name="codigo" required />
+    <label>Nombre</label>
+    <input type="text" name="nombre" required>
 
-      <label for="nombre">Nombre:</label>
-      <input type="text" id="nombre" name="nombre" required />
-
-      <button type="submit">Guardar</button>
-    </form>
-
-    <!-- GET al servlet: lista por defecto -->
-    <a class="btn" href="<%= baseURL %>/persona">Volver al listado</a>
-  </div>
+    <button class="btn" type="submit">Guardar</button>
+    <a class="btn btn-secondary" href="<%= baseURL %>/persona">Volver</a>
+  </form>
+</div>
 </body>
 </html>
