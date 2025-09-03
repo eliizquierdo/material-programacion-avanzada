@@ -4,6 +4,7 @@ import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
+
 import modelo.dao.PersonaDAO;
 import modelo.vo.PersonaVO;
 
@@ -11,42 +12,116 @@ import modelo.vo.PersonaVO;
 public class PersonaControladorServlet extends HttpServlet {
     private final PersonaDAO dao = new PersonaDAO();
 
+    // ======================== GET ========================
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
         String action = request.getParameter("action");
-        if ("form".equalsIgnoreCase(action)) {
-            // Mostrar formulario vacío
-            request.getRequestDispatcher("/vista/persona-form.jsp").forward(request, response);
-            return;
-        }
+        if (action == null)
+            action = "";
 
-        // Por defecto: LISTAR
-        request.setAttribute("personas", dao.getLista());
-        request.getRequestDispatcher("/vista/persona-lista.jsp").forward(request, response);
+        switch (action) {
+            case "agregar": // mostrar formulario de alta (GET)
+                request.getRequestDispatcher("/vista/persona-form.jsp")
+                        .forward(request, response);
+                break;
+
+            case "cargarEditar": // mostrar formulario de edición (GET)
+                cargarEditar(request, response);
+                break;
+
+            case "listar": // listar explícito
+                listar(request, response);
+                break;
+
+            default: // sin action o desconocida → listar
+                listar(request, response);
+                break;
+        }
     }
 
+    // ======================== POST ========================
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.setCharacterEncoding("UTF-8");
 
+        request.setCharacterEncoding("UTF-8");
         String action = request.getParameter("action");
-        if ("agregar".equalsIgnoreCase(action)) {
-            try {
-                String cod = request.getParameter("codigo");
-                int codigo = Integer.parseInt(cod);
-                String nombre = request.getParameter("nombre");
-                if (nombre != null && !nombre.trim().isEmpty()) {
-                    PersonaVO p = new PersonaVO(codigo, nombre.trim());
-                    dao.agregar(p);
-                }
-            } catch (Exception ignored) {
-            }
+        if (action == null) {
+            response.sendRedirect(request.getContextPath() + "/persona");
+            return;
         }
 
-        // PRG: volvemos al listado
+        switch (action) {
+            case "agregar":
+                agregar(request, response);
+                break;
+            case "editar":
+                editar(request, response);
+                break;
+            case "eliminar":
+                eliminar(request, response);
+                break; // eliminar por POST
+            default:
+                response.sendRedirect(request.getContextPath() + "/persona");
+        }
+    }
+
+    // ===================== Acciones privadas =====================
+    private void agregar(HttpServletRequest request, HttpServletResponse response)
+            throws IOException {
+        int codigo = Integer.parseInt(request.getParameter("codigo"));
+        String nombre = request.getParameter("nombre");
+        dao.agregar(new PersonaVO(codigo, nombre));
+        response.sendRedirect(request.getContextPath() + "/persona"); // PRG → listar
+    }
+
+    private void editar(HttpServletRequest request, HttpServletResponse response)
+            throws IOException {
+        int codigo = Integer.parseInt(request.getParameter("codigo"));
+        String nombre = request.getParameter("nombre");
+        dao.actualizar(new PersonaVO(codigo, nombre));
+        // PRG → volver a listar
         response.sendRedirect(request.getContextPath() + "/persona");
     }
+
+    private void eliminar(HttpServletRequest request, HttpServletResponse response)
+            throws IOException {
+
+        int codigo = Integer.parseInt(request.getParameter("codigo"));
+
+        dao.eliminar(codigo);
+
+        // PRG → volver a listar
+        response.sendRedirect(request.getContextPath() + "/persona");
+    }
+
+    private void cargarEditar(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+        int codigo = Integer.parseInt(request.getParameter("codigo"));
+
+        PersonaVO persona = dao.obtenerXCodigo(codigo);
+
+        if (persona != null) {
+
+            request.setAttribute("persona", persona);
+
+            request.getRequestDispatcher("/vista/persona-editar.jsp")
+
+                    .forward(request, response);
+        } else {
+            
+            response.sendRedirect(request.getContextPath() + "/persona");
+        }
+    }
+
+    private void listar(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        request.setAttribute("personas", dao.getLista());
+        request.getRequestDispatcher("/vista/persona-lista.jsp")
+                .forward(request, response);
+    }
 }
+
