@@ -6,7 +6,7 @@
     <html>
     <head>
         <title>Formulario Agregar Personas</title>
-        <link rel="stylesheet" href="<%= baseURL %>/css/persona.css">
+        <link rel="stylesheet" href="<%= baseURL %>/css/styles.css">
     </head>
     <body>
         <div class="form-container">
