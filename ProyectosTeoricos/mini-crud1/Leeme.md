@@ -21,23 +21,23 @@ Sistema web básico y completo para la gestión de personas desarrollado en **Ja
 **Página de inicio del sistema MINI-CRUD1**
 
 ### Formulario Agregar Persona
-<img src="https://github.com/eliizquierdo/material-programacion-avanzada/raw/main/ProyectosTeoricos/mini-crud1/agregarPersonas.png" alt="Formulario Agregar Personas" width="450">
+<img src="https://github.com/eliizquierdo/material-programacion-avanzada/raw/main/ProyectosTeoricos/mini-crud1/agregarPersona.png" alt="Formulario Agregar Personas" width="500">
  
 *Interfaz JSP para el registro de nuevas personas*
 
 ### Lista de Personas  
-<img src="https://github.com/eliizquierdo/material-programacion-avanzada/raw/main/ProyectosTeoricos/mini-crud1/listarPersonas.png" alt="Lista Personas" width="450">
+<img src="https://github.com/eliizquierdo/material-programacion-avanzada/raw/main/ProyectosTeoricos/mini-crud1/listarPersonas.png" alt="Lista Personas" width="500">
 
 *Vista completa con opciones de editar y eliminar*
 
 ### Formulario Editar
-<img src="https://github.com/eliizquierdo/material-programacion-avanzada/raw/main/ProyectosTeoricos/mini-crud1/editarPersona.png" alt="Formulario Editar" width="450">
+<img src="https://github.com/eliizquierdo/material-programacion-avanzada/raw/main/ProyectosTeoricos/mini-crud1/editarPersona.png" alt="Formulario Editar" width="500">
 
 *Modificación sencilla de datos existentes*
 
 
 ### Confirmación de Eliminar
-<img src="https://github.com/eliizquierdo/material-programacion-avanzada/raw/main/ProyectosTeoricos/mini-crud1/eliminar.png" alt="log Eliminar" width="450">
+<img src="https://github.com/eliizquierdo/material-programacion-avanzada/raw/main/ProyectosTeoricos/mini-crud1/eliminar.png" alt="log Eliminar" width="500">
 
 *Confirmación segura antes de eliminar registros*
 
