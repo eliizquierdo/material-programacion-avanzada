@@ -83,10 +83,11 @@ El proyecto implementa un controlador dividido en métodos específicos:
 
 Este proyecto ha sido desarrollado y compartido específicamente para estudiantes como material de aprendizaje, demostrando:
 
-- Implementación de CRUD básico
-- Separación de responsabilidades
-- Buenas prácticas de programación web
-- Estructura de proyecto organizada
+- 🏗️ **Arquitectura MVC** en aplicaciones web Java
+- 🌐 **Desarrollo con Servlets y JSP**
+- 💾 **Patrón DAO** para acceso a datos
+- 📦 **Gestión de proyectos** con Maven
+- 🎯 **CRUD completo** con interfaz web
 
 ## 📋 Funcionalidades Detalladas
 
