@@ -16,6 +16,7 @@ Sistema web básico y completo para la gestión de personas desarrollado en **Ja
 ## 📸 Capturas del Proyecto
 
 ### Página Principal
+<img src="https://github.com/eliizquierdo/material-programacion-avanzada/raw/main/ProyectosTeoricos/mini-crud1/index.png" alt="Página Principal" width="400">
 **![Ver Página Principal](https://github.com/eliizquierdo/material-programacion-avanzada/raw/main/ProyectosTeoricos/mini-crud1/index.png)**  
 *Página de inicio del sistema MINI-CRUD1*
 
