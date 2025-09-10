@@ -109,7 +109,7 @@ El proyecto implementa el patrón **Modelo-Vista-Controlador**:
 
 ## 📋 Funcionalidades Detalladas
 
-| Función | Descripción | Tecnología | Archivo Principal |
+| Función | Descripción | Tecnología | Código |
 |---------|-------------|------------|------------------|
 | 🏠 Inicio | Página principal del sistema | JSP + CSS | [index.jsp](https://github.com/eliizquierdo/material-programacion-avanzada/blob/main/ProyectosTeoricos/mini-crud1/mini-crud1/src/main/webapp/index.jsp) |
 | ➕ Agregar | Formulario JSP para nuevas personas | Servlet + JSP | [persona-form.jsp](https://github.com/eliizquierdo/material-programacion-avanzada/blob/main/ProyectosTeoricos/mini-crud1/mini-crud1/src/main/webapp/vista/persona-form.jsp) |
