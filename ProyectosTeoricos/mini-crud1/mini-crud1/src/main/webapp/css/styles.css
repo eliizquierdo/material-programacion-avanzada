@@ -1,0 +1,211 @@
+/* ================== Layout y formulario ================== */
+.form-container {
+  max-width: 640px;
+  margin: 24px auto;
+  padding: 20px;
+  background: #fff;
+  border: 2px solid #ccc;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Layout en 2 columnas: label | control */
+form {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 12px 12px;
+}
+
+/* Labels */
+form label {
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+/* Inputs y select */
+input[type="text"],
+input[type="number"],
+select {
+  height: 44px;
+  font-size: 16px;
+  padding: 0 10px;
+  border: 1px solid #cfd3d7;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+/* Botones de submit SIN clase .btn: estilo por defecto (azul) */
+input[type="submit"]:not(.btn),
+button[type="submit"]:not(.btn) {
+  height: 44px;
+  font-size: 16px;
+  padding: 0 18px;
+  border: 0;
+  border-radius: 10px;
+  background: #0d6efd;
+  color: #fff;
+  cursor: pointer;
+  grid-column: 2;
+  justify-self: start;
+}
+input[type="submit"]:not(.btn):hover,
+button[type="submit"]:not(.btn):hover {
+  background: #0b5ed7;
+}
+
+/* ================== Tipografías y contenedores ================== */
+h1 {
+  max-width: 960px;
+  margin: 24px auto 12px;
+  font-size: 40px;
+  line-height: 1.2;
+  color: #0d1635;
+}
+
+.page-container {
+  max-width: 960px;
+  margin: 0 auto 32px;
+  padding: 0 8px;
+}
+
+/* ================== Tabla ================== */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border: none;
+}
+.table th,
+.table td {
+  padding: 12px 14px;
+  text-align: left;
+  border-bottom: 1px solid #eef1f4;
+  font-size: 15px;
+  vertical-align: middle; /* Añadido para centrar verticalmente */
+}
+.table thead th {
+  background: #f1f5f9;
+  color: #0d1635;
+  font-weight: 700;
+  border-bottom: 1px solid #e2e8f0;
+}
+.table tbody tr:hover { 
+  background: #f8fafc; 
+}
+
+/* Mejorado: contenedor de acciones */
+.table .actions {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Espacio entre botones */
+  flex-wrap: wrap; /* Para pantallas pequeñas */
+}
+
+.table .actions a, 
+.table .actions form {
+  margin: 0; /* Removemos márgenes por defecto */
+}
+
+.table .actions form {
+  display: inline-flex; /* Cambiado de inline a inline-flex */
+}
+
+/* Responsivo: scroll horizontal si no entra */
+.table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-top: 12px;
+  border: 2px solid #ccc;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+/* ================== Botones reutilizables ================== */
+/* Base para links y botones con clase .btn */
+a.btn,
+button.btn,
+input.btn[type="submit"] {
+  display: inline-block;
+  margin: 0; /* Cambiado: removemos el margin-top por defecto */
+  padding: 8px 14px; /* Reducido para botones de tabla */
+  background: #0d6efd;
+  color: #fff;
+  border: 0;
+  border-radius: 6px; /* Ligeramente más pequeño para tabla */
+  text-decoration: none;
+  font-size: 14px; /* Reducido para tabla */
+  cursor: pointer;
+  transition: background-color .2s ease;
+  white-space: nowrap; /* Evita que el texto se rompa */
+}
+
+/* Para botones fuera de tabla (como en formularios) */
+.form-container .btn,
+.page-container > .btn {
+  margin-top: 12px;
+  padding: 10px 16px;
+  font-size: 15px;
+  border-radius: 10px;
+}
+
+a.btn:hover,
+button.btn:hover,
+input.btn[type="submit"]:hover {
+  background: #0b5ed7;
+}
+
+/* Variantes (ganan a la base) */
+a.btn.btn-edit,
+button.btn.btn-edit,
+input.btn.btn-edit[type="submit"] {
+  background: #16a34a;
+}
+a.btn.btn-edit:hover,
+button.btn.btn-edit:hover,
+input.btn.btn-edit[type="submit"]:hover {
+  background: #15803d;
+}
+
+a.btn.btn-danger,
+button.btn.btn-danger,
+input.btn.btn-danger[type="submit"] {
+  background: #dc2626;
+}
+a.btn.btn-danger:hover,
+button.btn.btn-danger:hover,
+input.btn.btn-danger[type="submit"]:hover {
+  background: #b91c1c;
+}
+
+a.btn.btn-secondary,
+button.btn.btn-secondary,
+input.btn.btn-secondary[type="submit"] {
+  background: #6b7280;
+}
+a.btn.btn-secondary:hover,
+button.btn.btn-secondary:hover,
+input.btn.btn-secondary[type="submit"]:hover {
+  background: #4b5563;
+}
+
+/* Variante contorno (si la usas) */
+.btn-outline {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid #0d6efd;
+  color: #0d6efd;
+  text-decoration: none;
+  font-size: 14px;
+  background: #fff;
+}
+.btn-outline:hover { 
+  background: #eaf2ff; 
+}
+
+/* Helpers */
+.section-gap { 
+  margin-top: 12px; 
+}
