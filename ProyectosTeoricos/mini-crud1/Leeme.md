@@ -109,13 +109,35 @@ El proyecto implementa el patrón **Modelo-Vista-Controlador**:
 
 ## 📋 Funcionalidades Detalladas
 
-| Función | Descripción | Tecnología | Código involucrado |
-|---------|-------------|------------|------------------|
-| 🏠 Inicio | Página principal del sistema | JSP + CSS | [index.jsp](https://github.com/eliizquierdo/material-programacion-avanzada/blob/main/ProyectosTeoricos/mini-crud1/mini-crud1/src/main/webapp/index.jsp) |
-| ➕ Agregar | Formulario JSP para nuevas personas | Servlet + JSP | [PersonaControladorServlet.java](https://github.com/eliizquierdo/material-programacion-avanzada/blob/main/ProyectosTeoricos/mini-crud1/mini-crud1/src/main/java/controlador/PersonaControladorServlet.java) [persona-form.jsp](https://github.com/eliizquierdo/material-programacion-avanzada/blob/main/ProyectosTeoricos/mini-crud1/mini-crud1/src/main/webapp/vista/persona-form.jsp) |
-| 📋 Listar | Tabla con todos los registros y acciones | JSP + DAO | [persona-lista.jsp](https://github.com/eliizquierdo/material-programacion-avanzada/blob/main/ProyectosTeoricos/mini-crud1/mini-crud1/src/main/webapp/vista/persona-lista.jsp) |
-| ✏️ Editar | Formulario pre-cargado para modificaciones | Servlet + JSP | [persona-editar.jsp](https://github.com/eliizquierdo/material-programacion-avanzada/blob/main/ProyectosTeoricos/mini-crud1/mini-crud1/src/main/webapp/vista/persona-editar.jsp) |
-| 🗑️ Eliminar | Confirmación y eliminación segura | Servlet + DAO | [PersonaControladorServlet.java](https://github.com/eliizquierdo/material-programacion-avanzada/blob/main/ProyectosTeoricos/mini-crud1/mini-crud1/src/main/java/controlador/PersonaControladorServlet.java) |
+| Función | Descripción | Tecnología |
+|---------|-------------|------------|
+| 🏠 Inicio | Página principal del sistema | JSP + CSS |
+| ➕ Agregar | Formulario JSP para nuevas personas | Servlet + JSP |
+| 📋 Listar | Tabla con todos los registros y acciones | JSP + DAO |
+| ✏️ Editar | Formulario pre-cargado para modificaciones | Servlet + JSP |
+| 🗑️ Eliminar | Confirmación y eliminación segura | Servlet + DAO |
+
+## 🗂️ Archivos Clave del Proyecto
+
+### 🎯 Controlador (Controller)
+- **PersonaControladorServlet.java** - Servlet principal que maneja todas las peticiones HTTP y coordina las operaciones CRUD
+
+### 💾 Modelo (Model)
+- **PersonaDAO.java** - Data Access Object para operaciones de base de datos
+- **PersonaVO.java** - Value Object que encapsula los datos de persona
+
+### 🌐 Vistas (View)
+- **index.jsp** - Página principal del sistema
+- **persona-form.jsp** - Formulario para agregar nuevas personas
+- **persona-lista.jsp** - Tabla que muestra todas las personas con botones editar/eliminar
+- **persona-editar.jsp** - Formulario pre-cargado para modificar datos existentes
+
+### ⚙️ Configuración y Estilos
+- **web.xml** - Configuración del servlet y mapeo de URLs
+- **pom.xml** - Configuración de Maven y dependencias
+- **styles.css** - Estilos CSS para la interfaz de usuario
+
+
 
 
 ## 🎓 Propósito Educativo
