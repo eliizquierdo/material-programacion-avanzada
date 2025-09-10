@@ -144,7 +144,7 @@ Este proyecto **MINI-CRUD1** ha sido desarrollado y compartido específicamente 
 ¿Preguntas sobre el proyecto? ¡Estamos aquí para ayudar a los estudiantes!
 
 - 👨‍💻 **Autor**: Prof. Elizabeth Izquierdo
-- 📚 **wiki con teóricos y tutoriales paso a paso**: [wiki](https://github.com/eliizquierdo/material-programacion-avanzada/wiki))
+- 📚 **wiki con teóricos y tutoriales paso a paso**: [AQUÍ](https://github.com/eliizquierdo/material-programacion-avanzada/wiki)
 - 🐛 **Reportar problemas**: Issues de GitHub
 - 💡 **Sugerencias**: Pull requests bienvenidos
 
