@@ -149,12 +149,13 @@ Este proyecto **MINI-CRUD1** ha sido desarrollado y compartido específicamente 
 - **Build**: Maven
 - **Arquitectura**: Web Application
 
-## 📞 Contacto y Soporte
+## 📧 Contacto y Soporte
 
 ¿Preguntas sobre el proyecto? ¡Estamos aquí para ayudar a los estudiantes!
 
 - 👨‍💻 **Autor**: Prof. Elizabeth Izquierdo
-- 📚 **wiki con teóricos y tutoriales paso a paso**: [AQUÍ](https://github.com/eliizquierdo/material-programacion-avanzada/wiki)
+- 📧 **Email**: profe.eliza17@gmail.com
+- 📚 **Wiki con teóricos y tutoriales paso a paso (en proceso)**: [AQUÍ](https://github.com/eliizquierdo/material-programacion-avanzada/wiki)
 - 🐛 **Reportar problemas**: Issues de GitHub
 - 💡 **Sugerencias**: Pull requests bienvenidos
 
