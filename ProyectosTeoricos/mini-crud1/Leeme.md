@@ -24,7 +24,7 @@ Sistema web básico y completo para la gestión de personas desarrollado en **Ja
 *Interfaz JSP para el registro de nuevas personas*
 
 ### Lista de Personas  
-**[Ver Lista de Personas](https://github.com/eliizquierdo/material-programacion-avanzada/blob/main/ProyectosTeoricos/mini-crud1/listarPersonas.png)**  
+**[Ver Lista de Personas](https://github.com/eliizquierdo/material-programacion-avanzada/blob/main/ProyectosTeoricos/mini-crud1/agregarPersona.png)**  
 *Vista completa con opciones de editar y eliminar*
 
 ### Formulario Editar
