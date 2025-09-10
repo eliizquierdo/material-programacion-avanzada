@@ -98,8 +98,7 @@ Sistema web básico y completo para la gestión de personas desarrollado en **Ja
 El proyecto implementa el patrón **Modelo-Vista-Controlador**:
 
 ### 🎯 Controlador (Controller)
-- **PersonaControladorServlet.java**: Servlet principal que maneja todas las peticiones HTTP  
-  [Ver código](https://github.com/eliizquierdo/material-programacion-avanzada/blob/main/ProyectosTeoricos/mini-crud1/mini-crud1/src/main/java/controlador/PersonaControladorServlet.java)
+- **PersonaControladorServlet.java**: Servlet principal que maneja todas las peticiones HTTP  [Ver código](https://github.com/eliizquierdo/material-programacion-avanzada/blob/main/ProyectosTeoricos/mini-crud1/mini-crud1/src/main/java/controlador/PersonaControladorServlet.java)
 - Procesa las acciones: agregar, listar, editar, eliminar
 - Coordina la comunicación entre modelo y vista
 
@@ -109,18 +108,13 @@ El proyecto implementa el patrón **Modelo-Vista-Controlador**:
 - Maneja la lógica de negocio y persistencia de datos
 
 ### 🌐 Vista (View)
-- **persona-form.jsp**: Formulario para agregar personas  
-  [Ver código](https://github.com/eliizquierdo/material-programacion-avanzada/blob/main/ProyectosTeoricos/mini-crud1/mini-crud1/src/main/webapp/vista/persona-form.jsp)
-- **persona-lista.jsp**: Lista con botones editar/eliminar  
-  [Ver código](https://github.com/eliizquierdo/material-programacion-avanzada/blob/main/ProyectosTeoricos/mini-crud1/mini-crud1/src/main/webapp/vista/persona-lista.jsp)
-- **persona-editar.jsp**: Formulario de edición  
-  [Ver código](https://github.com/eliizquierdo/material-programacion-avanzada/blob/main/ProyectosTeoricos/mini-crud1/mini-crud1/src/main/webapp/vista/persona-editar.jsp)
-- **styles.css**: Estilos para interfaz atractiva  
-  [Ver código](https://github.com/eliizquierdo/material-programacion-avanzada/blob/main/ProyectosTeoricos/mini-crud1/mini-crud1/src/main/webapp/css/styles.css)
+- **persona-form.jsp**: Formulario para agregar personas  [Ver código](https://github.com/eliizquierdo/material-programacion-avanzada/blob/main/ProyectosTeoricos/mini-crud1/mini-crud1/src/main/webapp/vista/persona-form.jsp)
+- **persona-lista.jsp**: Lista con botones editar/eliminar  [Ver código](https://github.com/eliizquierdo/material-programacion-avanzada/blob/main/ProyectosTeoricos/mini-crud1/mini-crud1/src/main/webapp/vista/persona-lista.jsp)
+- **persona-editar.jsp**: Formulario de edición  [Ver código](https://github.com/eliizquierdo/material-programacion-avanzada/blob/main/ProyectosTeoricos/mini-crud1/mini-crud1/src/main/webapp/vista/persona-editar.jsp)
+- **styles.css**: Estilos para interfaz atractiva  [Ver código](https://github.com/eliizquierdo/material-programacion-avanzada/blob/main/ProyectosTeoricos/mini-crud1/mini-crud1/src/main/webapp/css/styles.css)
 
 ### ⚙️ Configuración
-- **pom.xml** - Configuración de Maven y dependencias  
-  [Ver código](https://github.com/eliizquierdo/material-programacion-avanzada/blob/main/ProyectosTeoricos/mini-crud1/mini-crud1/pom.xml)
+- **pom.xml** - Configuración de Maven y dependencias  [Ver código](https://github.com/eliizquierdo/material-programacion-avanzada/blob/main/ProyectosTeoricos/mini-crud1/mini-crud1/pom.xml)
 
 
 ## 📋 Funcionalidades Detalladas
