@@ -177,7 +177,7 @@ Este proyecto **MINI-CRUD1** está diseñado como herramienta de aprendizaje. Te
 
 <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licencia Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
 
-Este proyecto está bajo la **Licencia Creative Commons Atribución-CompartirIgual 4.0 Internacional**.
+Este proyecto está bajo la **Licencia Creative Commons Attribution-ShareAlike 4.0 Internacional**.
 
 Esto significa que puedes:
 - ✅ **Compartir** — copiar y redistribuir el material en cualquier medio o formato
