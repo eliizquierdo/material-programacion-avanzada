@@ -75,21 +75,16 @@ Sistema web completo para la gestión de personas desarrollado en **Java** con a
    
    *(El proyecto está contenido dentro del repositorio de Material de Programación Avanzada, por lo que la descarga directa del ZIP es la opción más práctica)*
 
-2. **Extraer el archivo ZIP** descargado
+2. **Extraer el archivo ZIP** descargado y abrir la carpeta del proyecto con VS Code
 
-3. **Compilar con Maven**:
+3. **Ejecutar en la terminal de Maven**:
    ```bash
-   cd mini-crud1
-   mvn clean compile
    mvn package
+   mvn tomcat7:run
    ```
 
-4. **Desplegar en Tomcat**:
-   - Copiar el archivo `.war` generado a la carpeta `webapps` de Tomcat
-   - O importar en tu IDE favorito (Eclipse, IntelliJ, NetBeans)
-
-5. **Ejecutar**:
-   - Iniciar Tomcat
+4. **Acceder a la aplicación**:
+   - La aplicación se ejecutará automáticamente
    - Acceder desde: `http://localhost:8080/mini-crud1`
 
 ## 🏗️ Arquitectura Java MVC
