@@ -173,5 +173,20 @@ Este proyecto **MINI-CRUD1** está diseñado como herramienta de aprendizaje. Te
 - 🛠️ **Practicar** con Maven y Tomcat
 
 ---
+## 📄 Licencia
+
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licencia Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
+
+Este proyecto está bajo la **Licencia Creative Commons Atribución-CompartirIgual 4.0 Internacional**.
+
+Esto significa que puedes:
+- ✅ **Compartir** — copiar y redistribuir el material en cualquier medio o formato
+- ✅ **Adaptar** — remezclar, transformar y construir a partir del material para cualquier propósito, incluso comercialmente
+
+Bajo los siguientes términos:
+- 📝 **Atribución** — Debes dar crédito de manera adecuada, brindar un enlace a la licencia, e indicar si se han realizado cambios
+- 🔄 **CompartirIgual** — Si remezclas, transformas o creas a partir del material, debes distribuir tu contribución bajo la misma licencia del original
+
+[Ver licencia completa](http://creativecommons.org/licenses/by-sa/4.0/)
 
 **¡Happy Coding! ☕🚀**
