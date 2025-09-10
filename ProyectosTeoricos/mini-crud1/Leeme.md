@@ -1,22 +1,25 @@
-# 📋 Proyecto Gestión de Personas
+# 📋 MINI-CRUD1 - Gestión de Personas
 
-Un sistema completo para la gestión de personas con interfaz web intuitiva, desarrollado con fines educativos y compartido con estudiantes.
+Sistema web completo para la gestión de personas desarrollado en **Java** con arquitectura MVC, creado con fines educativos y compartido con estudiantes.
 
 ## 🚀 Características
 
-- ✅ **Formulario de Agregar Personas**: Interfaz limpia para registrar nuevas personas
+- ✅ **Formulario de Agregar Personas**: Interfaz JSP limpia para registrar nuevas personas
 - 📝 **Listado de Personas**: Visualización organizada de todos los registros
 - ✏️ **Editar Personas**: Modificación sencilla de datos existentes  
 - 🗑️ **Eliminar Personas**: Gestión segura de eliminación de registros
-- 🎯 **Controlador Modularizado**: Métodos separados para cada acción (CRUD completo)
+- 🎯 **Servlet Controlador**: PersonaControladorServlet.java maneja todas las peticiones
+- 💾 **Capa DAO**: PersonaDAO.java para acceso a datos
+- 🎨 **Capa VO**: PersonaVO.java como objeto de valor
+- 🌐 **Vistas JSP**: Interfaz web dinámica con estilos CSS
 
 ## 📸 Capturas del Proyecto
 
 ### Formulario Agregar Persona
 ![Formulario Agregar](./imagenes/formulario-agregar.png)
-*Interfaz intuitiva para el registro de nuevas personas*
+*Interfaz JSP para el registro de nuevas personas*
 
-### Lista de Personas
+### Lista de Personas  
 ![Lista Personas](./imagenes/lista-personas.png)
 *Vista completa con opciones de editar y eliminar*
 
@@ -27,95 +30,137 @@ Un sistema completo para la gestión de personas con interfaz web intuitiva, des
 ## 🛠️ Estructura del Proyecto
 
 ```
-📁 proyecto-personas/
-├── 📄 index.php
-├── 📄 agregar.php
-├── 📄 listar.php
-├── 📄 editar.php
-├── 📄 eliminar.php
-├── 📂 controlador/
-│   ├── 📄 PersonaControlador.php
-│   └── 📄 conexion.php
-├── 📂 modelo/
-│   └── 📄 Persona.php
-├── 📂 vista/
-│   └── 📄 estilos.css
-└── 📂 imagenes/
-    ├── 🖼️ formulario-agregar.png
-    ├── 🖼️ lista-personas.png
-    └── 🖼️ formulario-editar.png
+📁 MINI-CRUD1/
+├── 📁 src/main/java/
+│   ├── 📁 controlador/
+│   │   └── 📄 PersonaControladorServlet.java
+│   ├── 📁 modelo/
+│   │   ├── 📁 dao/
+│   │   │   └── 📄 PersonaDAO.java
+│   │   └── 📁 vo/
+│   │       └── 📄 PersonaVO.java
+├── 📁 webapp/
+│   ├── 📁 css/
+│   │   └── 📄 styles.css
+│   ├── 📁 vista/
+│   │   ├── 📄 persona-editar.jsp
+│   │   ├── 📄 persona-form.jsp
+│   │   └── 📄 persona-lista.jsp
+│   ├── 📁 WEB-INF/
+│   │   └── 📄 web.xml
+│   └── 📄 index.jsp
+├── 📁 target/ (archivos compilados)
+└── 📄 pom.xml (configuración Maven)
 ```
 
 ## ⚡ Instalación y Uso
 
 ### Prerrequisitos
-- Servidor web (Apache/Nginx)
-- PHP 7.4 o superior
-- MySQL/MariaDB
+- ☕ **Java JDK 8** o superior
+- 🚀 **Apache Tomcat 9** o superior  
+- 🛠️ **Maven** para gestión de dependencias
+- 🗄️ **Base de datos** (MySQL/PostgreSQL recomendada)
 
 ### Instalación
 1. **Descargar el proyecto**:
    ```bash
-   git clone https://github.com/tu-usuario/proyecto-personas.git
+   git clone https://github.com/tu-usuario/mini-crud1.git
    ```
    
-   O descargar directamente: 📦 [**Descargar ZIP del Proyecto**](./proyecto-personas.zip)
+   📦 **O descargar directamente**: [**MINI-CRUD1.zip**](./mini-crud1.zip)
 
-2. **Configurar base de datos**:
-   - Importar el archivo `database.sql`
-   - Configurar credenciales en `controlador/conexion.php`
+2. **Compilar con Maven**:
+   ```bash
+   cd mini-crud1
+   mvn clean compile
+   mvn package
+   ```
 
-3. **Ejecutar**:
-   - Colocar en la carpeta del servidor web
-   - Acceder desde el navegador
+3. **Desplegar en Tomcat**:
+   - Copiar el archivo `.war` generado a la carpeta `webapps` de Tomcat
+   - O importar en tu IDE favorito (Eclipse, IntelliJ, NetBeans)
 
-## 🏗️ Arquitectura
+4. **Configurar base de datos**:
+   - Crear base de datos para el proyecto
+   - Configurar conexión en PersonaDAO.java
 
-### Controlador Modularizado
-El proyecto implementa un controlador dividido en métodos específicos:
+5. **Ejecutar**:
+   - Iniciar Tomcat
+   - Acceder desde: `http://localhost:8080/mini-crud1`
 
-- `agregarPersona()` - Gestiona la inserción de nuevos registros
-- `listarPersonas()` - Maneja la consulta y visualización
-- `editarPersona()` - Procesa las actualizaciones
-- `eliminarPersona()` - Gestiona la eliminación segura
+## 🏗️ Arquitectura Java MVC
+
+El proyecto implementa el patrón **Modelo-Vista-Controlador**:
+
+### 🎯 Controlador (Controller)
+- **PersonaControladorServlet.java**: Servlet principal que maneja todas las peticiones HTTP
+- Procesa las acciones: agregar, listar, editar, eliminar
+- Coordina la comunicación entre modelo y vista
+
+### 💾 Modelo (Model)  
+- **PersonaDAO.java**: Data Access Object para operaciones de base de datos
+- **PersonaVO.java**: Value Object que encapsula los datos de persona
+- Maneja la lógica de negocio y persistencia de datos
+
+### 🌐 Vista (View)
+- **persona-form.jsp**: Formulario para agregar personas
+- **persona-lista.jsp**: Lista con botones editar/eliminar  
+- **persona-editar.jsp**: Formulario de edición
+- **styles.css**: Estilos para interfaz atractiva
+
+## 📋 Funcionalidades Detalladas
+
+| Función | Descripción | Tecnología | Estado |
+|---------|-------------|------------|---------|
+| ➕ Agregar | Formulario JSP para nuevas personas | Servlet + JSP | ✅ Completo |
+| 📋 Listar | Tabla con todos los registros y acciones | JSP + DAO | ✅ Completo |
+| ✏️ Editar | Formulario pre-cargado para modificaciones | Servlet + JSP | ✅ Completo |
+| 🗑️ Eliminar | Confirmación y eliminación segura | Servlet + DAO | ✅ Completo |
 
 ## 🎓 Propósito Educativo
 
-Este proyecto ha sido desarrollado y compartido específicamente para estudiantes como material de aprendizaje, demostrando:
+Este proyecto **MINI-CRUD1** ha sido desarrollado y compartido específicamente para estudiantes como material de aprendizaje, demostrando:
 
 - 🏗️ **Arquitectura MVC** en aplicaciones web Java
 - 🌐 **Desarrollo con Servlets y JSP**
 - 💾 **Patrón DAO** para acceso a datos
 - 📦 **Gestión de proyectos** con Maven
 - 🎯 **CRUD completo** con interfaz web
+- 🔄 **Separación de responsabilidades** entre capas
 
-## 📋 Funcionalidades Detalladas
+## 🚀 Características Técnicas
 
-| Función | Descripción | Estado |
-|---------|-------------|---------|
-| ➕ Agregar | Formulario completo para nuevas personas | ✅ Completo |
-| 📋 Listar | Tabla con todos los registros y acciones | ✅ Completo |
-| ✏️ Editar | Formulario pre-cargado para modificaciones | ✅ Completo |
-| 🗑️ Eliminar | Confirmación y eliminación segura | ✅ Completo |
+- **Lenguaje**: Java
+- **Frontend**: JSP + CSS
+- **Backend**: Java Servlets  
+- **Patrón**: MVC (Modelo-Vista-Controlador)
+- **Persistencia**: DAO Pattern
+- **Servidor**: Apache Tomcat
+- **Build**: Maven
+- **Arquitectura**: Web Application
 
 ## 📞 Contacto y Soporte
 
 ¿Preguntas sobre el proyecto? ¡Estamos aquí para ayudar a los estudiantes!
 
-- 📧 Email: [tu-email@ejemplo.com]
-- 📚 Documentación: Ver archivos del proyecto
-- 🐛 Reportar problemas: Issues de GitHub
+- 👨‍💻 **Autor**: Elizabeth Izquierdo
+- 📚 **Repositorio**: [Material Programación Avanzada](https://github.com/eliizquierdo/material-programacion-avanzada)
+- 🐛 **Reportar problemas**: Issues de GitHub
+- 💡 **Sugerencias**: Pull requests bienvenidos
 
 ---
 
 ### 📝 Notas para Estudiantes
 
-Este proyecto está diseñado como herramienta de aprendizaje. Te animamos a:
-- 🔍 Explorar el código fuente
-- 🧪 Experimentar con modificaciones
-- 💡 Proponer mejoras
-- 🤝 Colaborar con otros estudiantes
+Este proyecto **MINI-CRUD1** está diseñado como herramienta de aprendizaje. Te animamos a:
+
+- 🔍 **Explorar el código fuente** de cada capa (MVC)
+- 🧪 **Experimentar** con modificaciones en los JSP
+- 💡 **Proponer mejoras** en la funcionalidad
+- 🤝 **Colaborar** con otros estudiantes
+- 📖 **Estudiar** la arquitectura de Servlets
+- 🛠️ **Practicar** con Maven y Tomcat
 
 ---
 
-**¡Happy Coding! 🚀**
+**¡Happy Coding! ☕🚀**
