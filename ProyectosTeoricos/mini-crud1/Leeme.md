@@ -1,6 +1,6 @@
 # 📋 MINI-CRUD1 - Gestión de Personas
 
-Sistema web básico pero completo para la gestión de personas desarrollado en **Java** con arquitectura MVC, creado con fines educativos y compartido con estudiantes.
+Sistema web completo para la gestión de personas desarrollado en **Java** con arquitectura MVC, creado con fines educativos y compartido con estudiantes.
 
 ## 🚀 Características
 
@@ -15,17 +15,25 @@ Sistema web básico pero completo para la gestión de personas desarrollado en *
 
 ## 📸 Capturas del Proyecto
 
+### Página Principal
+**[Ver Página Principal](https://github.com/eliizquierdo/material-programacion-avanzada/blob/main/ProyectosTeoricos/mini-crud1/index.png)**  
+*Página de inicio del sistema MINI-CRUD1*
+
 ### Formulario Agregar Persona
-![Formulario Agregar](./imagenes/formulario-agregar.png)
+**[Ver Formulario Agregar](https://github.com/eliizquierdo/material-programacion-avanzada/blob/main/ProyectosTeoricos/mini-crud1/agregarPersona.png)**  
 *Interfaz JSP para el registro de nuevas personas*
 
 ### Lista de Personas  
-![Lista Personas](./imagenes/lista-personas.png)
+**[Ver Lista de Personas](https://github.com/eliizquierdo/material-programacion-avanzada/blob/main/ProyectosTeoricos/mini-crud1/listarPersonas.png)**  
 *Vista completa con opciones de editar y eliminar*
 
 ### Formulario Editar
-![Formulario Editar](./imagenes/formulario-editar.png)
+**[Ver Formulario Editar](https://github.com/eliizquierdo/material-programacion-avanzada/blob/main/ProyectosTeoricos/mini-crud1/editarPersona.png)**  
 *Modificación sencilla de datos existentes*
+
+### Confirmación de Eliminar
+**[Ver Confirmación Eliminar](https://github.com/eliizquierdo/material-programacion-avanzada/blob/main/ProyectosTeoricos/mini-crud1/eliminar.png)**  
+*Confirmación segura antes de eliminar registros*
 
 ## 🛠️ Estructura del Proyecto
 
@@ -57,19 +65,19 @@ Sistema web básico pero completo para la gestión de personas desarrollado en *
 
 ### Prerrequisitos
 - ☕ **Java JDK 8** o superior
-- 🚀 **Apache Tomcat 9** o superior  
+- 🚀 **Apache Tomcat 7** o superior  
 - 🛠️ **Maven** para gestión de dependencias
-- 🗄️ **Base de datos** (MySQL/PostgreSQL recomendada)
 
 ### Instalación
 1. **Descargar el proyecto**:
-   ```bash
-   git clone https://github.com/tu-usuario/mini-crud1.git
-   ```
    
-   📦 **O descargar directamente**: [**MINI-CRUD1.zip**](./mini-crud1.zip)
+   📦 **Descargar**: [**MINI-CRUD1.zip**](https://github.com/eliizquierdo/material-programacion-avanzada/blob/main/ProyectosTeoricos/mini-crud1/mini-crud1.zip)
+   
+   *(El proyecto está contenido dentro del repositorio de Material de Programación Avanzada, por lo que la descarga directa del ZIP es la opción más práctica)*
 
-2. **Compilar con Maven**:
+2. **Extraer el archivo ZIP** descargado
+
+3. **Compilar con Maven**:
    ```bash
    cd mini-crud1
    mvn clean compile
@@ -108,6 +116,7 @@ El proyecto implementa el patrón **Modelo-Vista-Controlador**:
 
 | Función | Descripción | Tecnología | Estado |
 |---------|-------------|------------|---------|
+| 🏠 Inicio | Página principal del sistema | JSP + CSS | ✅ Completo |
 | ➕ Agregar | Formulario JSP para nuevas personas | Servlet + JSP | ✅ Completo |
 | 📋 Listar | Tabla con todos los registros y acciones | JSP + DAO | ✅ Completo |
 | ✏️ Editar | Formulario pre-cargado para modificaciones | Servlet + JSP | ✅ Completo |
@@ -139,7 +148,7 @@ Este proyecto **MINI-CRUD1** ha sido desarrollado y compartido específicamente 
 
 ¿Preguntas sobre el proyecto? ¡Estamos aquí para ayudar a los estudiantes!
 
-- 👨‍💻 **Autor**: Elizabeth  Izquierdo
+- 👨‍💻 **Autor**: Eli Izquierdo
 - 📚 **Repositorio**: [Material Programación Avanzada](https://github.com/eliizquierdo/material-programacion-avanzada)
 - 🐛 **Reportar problemas**: Issues de GitHub
 - 💡 **Sugerencias**: Pull requests bienvenidos
