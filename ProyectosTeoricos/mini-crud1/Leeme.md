@@ -1,6 +1,6 @@
 # 📋 MINI-CRUD1 - Gestión de Personas
 
-Sistema web completo para la gestión de personas desarrollado en **Java** con arquitectura MVC, creado con fines educativos y compartido con estudiantes.
+Sistema web básico y completo para la gestión de personas desarrollado en **Java** con arquitectura MVC, creado con fines educativos y compartido con estudiantes.
 
 ## 🚀 Características
 
@@ -16,7 +16,7 @@ Sistema web completo para la gestión de personas desarrollado en **Java** con a
 ## 📸 Capturas del Proyecto
 
 ### Página Principal
-**[Ver Página Principal](https://github.com/eliizquierdo/material-programacion-avanzada/blob/main/ProyectosTeoricos/mini-crud1/index.png)**  
+**[Ver Página Principal](/index.png)**  
 *Página de inicio del sistema MINI-CRUD1*
 
 ### Formulario Agregar Persona
@@ -143,7 +143,7 @@ Este proyecto **MINI-CRUD1** ha sido desarrollado y compartido específicamente 
 
 ¿Preguntas sobre el proyecto? ¡Estamos aquí para ayudar a los estudiantes!
 
-- 👨‍💻 **Autor**: Eli Izquierdo
+- 👨‍💻 **Autor**: Prof. Elizabeth Izquierdo
 - 📚 **Repositorio**: [Material Programación Avanzada](https://github.com/eliizquierdo/material-programacion-avanzada)
 - 🐛 **Reportar problemas**: Issues de GitHub
 - 💡 **Sugerencias**: Pull requests bienvenidos
