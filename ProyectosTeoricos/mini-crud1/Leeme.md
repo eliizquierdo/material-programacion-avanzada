@@ -109,13 +109,14 @@ El proyecto implementa el patrón **Modelo-Vista-Controlador**:
 
 ## 📋 Funcionalidades Detalladas
 
-| Función | Descripción | Tecnología | Estado |
-|---------|-------------|------------|---------|
-| 🏠 Inicio | Página principal del sistema | JSP + CSS | ✅ Completo |
-| ➕ Agregar | Formulario JSP para nuevas personas | Servlet + JSP | ✅ Completo |
-| 📋 Listar | Tabla con todos los registros y acciones | JSP + DAO | ✅ Completo |
-| ✏️ Editar | Formulario pre-cargado para modificaciones | Servlet + JSP | ✅ Completo |
-| 🗑️ Eliminar | Confirmación y eliminación segura | Servlet + DAO | ✅ Completo |
+| Función | Descripción | Tecnología | Archivo Principal | Estado |
+|---------|-------------|------------|------------------|---------|
+| 🏠 Inicio | Página principal del sistema | JSP + CSS | [index.jsp](https://github.com/eliizquierdo/material-programacion-avanzada/blob/main/ProyectosTeoricos/mini-crud1/mini-crud1/src/main/webapp/index.jsp) | ✅ Completo |
+| ➕ Agregar | Formulario JSP para nuevas personas | Servlet + JSP | [persona-form.jsp](https://github.com/eliizquierdo/material-programacion-avanzada/blob/main/ProyectosTeoricos/mini-crud1/mini-crud1/src/main/webapp/vista/persona-form.jsp) | ✅ Completo |
+| 📋 Listar | Tabla con todos los registros y acciones | JSP + DAO | [persona-lista.jsp](https://github.com/eliizquierdo/material-programacion-avanzada/blob/main/ProyectosTeoricos/mini-crud1/mini-crud1/src/main/webapp/vista/persona-lista.jsp) | ✅ Completo |
+| ✏️ Editar | Formulario pre-cargado para modificaciones | Servlet + JSP | [persona-editar.jsp](https://github.com/eliizquierdo/material-programacion-avanzada/blob/main/ProyectosTeoricos/mini-crud1/mini-crud1/src/main/webapp/vista/persona-editar.jsp) | ✅ Completo |
+| 🗑️ Eliminar | Confirmación y eliminación segura | Servlet + DAO | [PersonaControladorServlet.java](https://github.com/eliizquierdo/material-programacion-avanzada/blob/main/ProyectosTeoricos/mini-crud1/mini-crud1/src/main/java/controlador/PersonaControladorServlet.java) | ✅ Completo |
+
 
 ## 🎓 Propósito Educativo
 
