@@ -184,8 +184,8 @@ Esto significa que puedes:
 - ✅ **Adaptar** — remezclar, transformar y construir a partir del material para cualquier propósito, incluso comercialmente
 
 Bajo los siguientes términos:
-- 📝 **Atribución** — Debes dar crédito de manera adecuada, brindar un enlace a la licencia, e indicar si se han realizado cambios
-- 🔄 **CompartirIgual** — Si remezclas, transformas o creas a partir del material, debes distribuir tu contribución bajo la misma licencia del original
+- 📝 **Attribution** — Debes dar crédito de manera adecuada, brindar un enlace a la licencia, e indicar si se han realizado cambios
+- 🔄 **ShareAlike** — Si remezclas, transformas o creas a partir del material, debes distribuir tu contribución bajo la misma licencia del original
 
 [Ver licencia completa](http://creativecommons.org/licenses/by-sa/4.0/)
 
