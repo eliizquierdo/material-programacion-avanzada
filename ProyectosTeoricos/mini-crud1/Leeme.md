@@ -109,10 +109,10 @@ El proyecto implementa el patrón **Modelo-Vista-Controlador**:
 
 ## 📋 Funcionalidades Detalladas
 
-| Función | Descripción | Tecnología | Código |
+| Función | Descripción | Tecnología | Código involucrado |
 |---------|-------------|------------|------------------|
 | 🏠 Inicio | Página principal del sistema | JSP + CSS | [index.jsp](https://github.com/eliizquierdo/material-programacion-avanzada/blob/main/ProyectosTeoricos/mini-crud1/mini-crud1/src/main/webapp/index.jsp) |
-| ➕ Agregar | Formulario JSP para nuevas personas | Servlet + JSP | [persona-form.jsp](https://github.com/eliizquierdo/material-programacion-avanzada/blob/main/ProyectosTeoricos/mini-crud1/mini-crud1/src/main/webapp/vista/persona-form.jsp) |
+| ➕ Agregar | Formulario JSP para nuevas personas | Servlet + JSP | [PersonaControladorServlet.java](https://github.com/eliizquierdo/material-programacion-avanzada/blob/main/ProyectosTeoricos/mini-crud1/mini-crud1/src/main/java/controlador/PersonaControladorServlet.java) [persona-form.jsp](https://github.com/eliizquierdo/material-programacion-avanzada/blob/main/ProyectosTeoricos/mini-crud1/mini-crud1/src/main/webapp/vista/persona-form.jsp) |
 | 📋 Listar | Tabla con todos los registros y acciones | JSP + DAO | [persona-lista.jsp](https://github.com/eliizquierdo/material-programacion-avanzada/blob/main/ProyectosTeoricos/mini-crud1/mini-crud1/src/main/webapp/vista/persona-lista.jsp) |
 | ✏️ Editar | Formulario pre-cargado para modificaciones | Servlet + JSP | [persona-editar.jsp](https://github.com/eliizquierdo/material-programacion-avanzada/blob/main/ProyectosTeoricos/mini-crud1/mini-crud1/src/main/webapp/vista/persona-editar.jsp) |
 | 🗑️ Eliminar | Confirmación y eliminación segura | Servlet + DAO | [PersonaControladorServlet.java](https://github.com/eliizquierdo/material-programacion-avanzada/blob/main/ProyectosTeoricos/mini-crud1/mini-crud1/src/main/java/controlador/PersonaControladorServlet.java) |
