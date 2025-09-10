@@ -20,7 +20,7 @@ Sistema web básico y completo para la gestión de personas desarrollado en **Ja
 *Página de inicio del sistema MINI-CRUD1*
 
 ### Formulario Agregar Persona
-**[Ver Formulario Agregar](https://github.com/eliizquierdo/material-programacion-avanzada/blob/main/ProyectosTeoricos/mini-crud1/agregarPersona.png)**  
+**[Ver Formulario Agregar](ProyectosTeoricos/mini-crud1/agregarPersona.png)**  
 *Interfaz JSP para el registro de nuevas personas*
 
 ### Lista de Personas  
