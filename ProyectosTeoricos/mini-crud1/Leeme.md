@@ -1,6 +1,6 @@
 # 📋 MINI-CRUD1 - Gestión de Personas
 
-Sistema web completo para la gestión de personas desarrollado en **Java** con arquitectura MVC, creado con fines educativos y compartido con estudiantes.
+Sistema web básico pero completo para la gestión de personas desarrollado en **Java** con arquitectura MVC, creado con fines educativos y compartido con estudiantes.
 
 ## 🚀 Características
 
@@ -76,13 +76,9 @@ Sistema web completo para la gestión de personas desarrollado en **Java** con a
    mvn package
    ```
 
-3. **Desplegar en Tomcat**:
+4. **Desplegar en Tomcat**:
    - Copiar el archivo `.war` generado a la carpeta `webapps` de Tomcat
    - O importar en tu IDE favorito (Eclipse, IntelliJ, NetBeans)
-
-4. **Configurar base de datos**:
-   - Crear base de datos para el proyecto
-   - Configurar conexión en PersonaDAO.java
 
 5. **Ejecutar**:
    - Iniciar Tomcat
@@ -143,7 +139,7 @@ Este proyecto **MINI-CRUD1** ha sido desarrollado y compartido específicamente 
 
 ¿Preguntas sobre el proyecto? ¡Estamos aquí para ayudar a los estudiantes!
 
-- 👨‍💻 **Autor**: Elizabeth Izquierdo
+- 👨‍💻 **Autor**: Elizabeth  Izquierdo
 - 📚 **Repositorio**: [Material Programación Avanzada](https://github.com/eliizquierdo/material-programacion-avanzada)
 - 🐛 **Reportar problemas**: Issues de GitHub
 - 💡 **Sugerencias**: Pull requests bienvenidos
