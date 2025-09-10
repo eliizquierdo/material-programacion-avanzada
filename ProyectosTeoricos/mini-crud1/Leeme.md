@@ -1,4 +1,4 @@
-#✨ MINI-CRUD1 - Gestión de Personas
+# ✨ MINI-CRUD1 - Gestión de Personas
 
 **📋Introducción**
 Sistema web básico y completo para la gestión de personas desarrollado en **Java** con arquitectura MVC, creado con fines educativos y compartido con estudiantes.
@@ -16,7 +16,7 @@ Este proyecto implementa las operaciones **CRUD** (Crear, Leer, Actualizar, Elim
 - Implementación de JPA/Hibernate para mapeo objeto-relacional (será un desafío para los estudiantes destacados)
 
 ---
-##💡  Características
+## 💡  Características
 
 - ✅ **Formulario de Agregar Personas**: Interfaz JSP limpia para registrar nuevas personas
 - 📝 **Listado de Personas**: Visualización organizada de todos los registros
