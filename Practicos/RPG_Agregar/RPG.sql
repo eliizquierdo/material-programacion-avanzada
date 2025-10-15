@@ -1,0 +1,16 @@
+CREATE DATABASE RPG;
+USE RPG;
+
+CREATE TABLE guerrero (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    fuerza INT NOT NULL,
+    nivel INT NOT NULL
+);
+
+CREATE TABLE mago (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    poder INT NOT NULL,
+    nivel INT NOT NULL
+);
