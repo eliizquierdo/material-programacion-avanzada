@@ -9,7 +9,7 @@ public class Conexion {
     /*Parametros de conexion */
     String bd = "RPG";
     String login = "root";
-    String password = "admin123";
+    String password = "12345";
     String url = "jdbc:mysql://localhost/" + bd + "?useTimezone=true&serverTimezone=UTC";
 
     private Connection con = null;
@@ -51,3 +51,4 @@ public class Conexion {
         return con;
     }
 }
+
