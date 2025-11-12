@@ -12,7 +12,6 @@ Sistema web básico para la gestión de personas desarrollado en Java con arquit
 **Próxima versión:**
 - Conexión a base de datos MySQL para persistencia real de datos
 - Validaciones robustas y manejo de errores avanzado
-- Implementación de JPA/Hibernate para mapeo objeto-relacional
 
 ## Funcionalidades
 
