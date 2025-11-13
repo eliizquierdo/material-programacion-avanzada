@@ -218,13 +218,10 @@ public class AlumnoDAO {
                 // FASE 1: Establecer conexión con la BBDD
                 con = cn.getConnection();
 
-                // Desactivar autocommit para manejar transacción
-                con.setAutoCommit(false);
-
                 // FASE 2: Definir las sentencias SQL
                 // Actualizamos tanto persona como alumno
-                String sql1 = "UPDATE persona SET nombre = ? WHERE codigo = ?";
-                String sql2 = "UPDATE alumno SET telefono = ? WHERE codigo = ?";
+                String sql1 = "UPDATE personas SET nombre = ? WHERE codigo = ?";
+                String sql2 = "UPDATE alumnos SET telefono = ? WHERE codigo = ?";
 
                 // FASE 3: Crear PreparedStatements y asignar parámetros
                 // Actualizar persona
@@ -242,27 +239,18 @@ public class AlumnoDAO {
                 int filasAlumno = ps2.executeUpdate();
 
                 // Confirmar transacción si al menos se actualizó persona
-                if (filasPersona > 0) {
-                    con.commit();
+                if ((filasPersona > 0) && (filasAlumno) > 0) {
                     exito = true;
                     System.out.println("Alumno actualizado: " + alumno.toString());
                 } else {
-                    con.rollback();
                     System.out.println("No se encontró alumno con código " + alumno.getCodigo());
                 }
             }
         } catch (SQLException e) {
             System.err.println("Error al actualizar alumno: " + e.getMessage());
             e.printStackTrace();
-            // Revertir transacción en caso de error
-            try {
-                if (con != null) {
-                    con.rollback();
-                    System.err.println("Transacción revertida");
-                }
-            } catch (SQLException ex) {
-                System.err.println("Error al hacer rollback: " + ex.getMessage());
-            }
+            System.err.println("Error al hacer rollback: " + e.getMessage());
+
         } finally {
             try {
                 if (ps1 != null)
@@ -270,14 +258,14 @@ public class AlumnoDAO {
                 if (ps2 != null)
                     ps2.close();
                 if (con != null)
-                    con.setAutoCommit(true);
-                cn.desconectar();
+                    cn.desconectar();
             } catch (SQLException e) {
                 System.err.println("Error al cerrar recursos: " + e.getMessage());
             }
         }
         return exito;
     }
+
 
     // ============== ELIMINAR ALUMNO ==============
     public boolean eliminarAlumno(int codigo) {
