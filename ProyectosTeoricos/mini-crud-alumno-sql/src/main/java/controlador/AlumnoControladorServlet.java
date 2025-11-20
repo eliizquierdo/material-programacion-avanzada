@@ -87,14 +87,39 @@ public class AlumnoControladorServlet extends HttpServlet {
     private void agregar(HttpServletRequest request, HttpServletResponse response)
             throws IOException, ServletException {
         try {
+            // 1. Recuperar TODOS los parámetros, incluyendo el código
+            int codigo = Integer.parseInt(request.getParameter("codigo"));
             String nombre = request.getParameter("nombre");
             String telefono = request.getParameter("telefono");
 
-            AlumnoVO alumno = new AlumnoVO(nombre, telefono);
-            dao.agregarAlumno(alumno);
+            // 2. VERIFICACIÓN DE UNICIDAD USANDO EL MÉTODO EXISTENTE
+            // Si retorna un AlumnoVO, es porque ya existe.
+            AlumnoVO alumnoExistente = dao.obtenerAlumnoPorCodigo(codigo); // <-- USAS TU MÉTODO
+
+            if (alumnoExistente != null) { // <-- CHEQUEO CLAVE
+                // Si el código existe, preparar mensaje de error y volver al formulario
+                request.setAttribute("error", "Error: El código de alumno " + codigo + " ya existe.");
+
+                // Opcional: Para mantener los datos ingresados
+                request.setAttribute("alumno", new AlumnoVO(codigo, nombre, telefono));
+
+                request.getRequestDispatcher("/vista/alumno-form.jsp").forward(request, response);
+                return; // Detener la ejecución, no se inserta
+            }
+
+            // 3. Si es único (alumnoExistente == null), proceder con la inserción
+            AlumnoVO nuevoAlumno = new AlumnoVO(codigo, nombre, telefono);
+            dao.agregarAlumno(nuevoAlumno);
 
             response.sendRedirect(request.getContextPath() + "/alumno"); // PRG
+
+        } catch (NumberFormatException e) {
+            // Manejar error si el código no es un número válido
+            request.setAttribute("error", "El código debe ser un número válido.");
+            request.getRequestDispatcher("/vista/alumno-form.jsp").forward(request, response);
+
         } catch (Exception e) {
+            // Manejar otros errores (DAO, conexión, etc.)
             System.err.println("ERROR al agregar alumno: " + e.getMessage());
             e.printStackTrace();
             request.setAttribute("error", "No se pudo guardar el alumno: " + e.getMessage());

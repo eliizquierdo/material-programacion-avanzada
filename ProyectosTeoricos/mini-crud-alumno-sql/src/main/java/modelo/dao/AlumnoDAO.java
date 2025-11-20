@@ -25,8 +25,8 @@ public class AlumnoDAO {
                 // FASE 2: Definir la sentencia SQL
                 // Realizamos un JOIN entre alumno y persona para obtener todos los datos
                 String sql = "SELECT p.codigo, p.nombre, a.telefono " +
-                        "FROM persona p " +
-                        "INNER JOIN alumno a ON p.codigo = a.codigo";
+                        "FROM personas p " +
+                        "INNER JOIN alumnos a ON p.codigo = a.codigo";
 
                 // FASE 3: Crear PreparedStatement
                 ps = con.prepareStatement(sql);
@@ -78,8 +78,8 @@ public class AlumnoDAO {
                 // FASE 2: Definir la sentencia SQL
                 // Realizamos un JOIN para obtener datos de persona y alumno
                 String sql = "SELECT p.codigo, p.nombre, a.telefono " +
-                        "FROM persona p " +
-                        "INNER JOIN alumno a ON p.codigo = a.codigo " +
+                        "FROM personas p " +
+                        "INNER JOIN alumnos a ON p.codigo = a.codigo " +
                         "WHERE p.codigo = ?";
 
                 // FASE 3: Crear PreparedStatement y asignar parámetros
@@ -121,7 +121,6 @@ public class AlumnoDAO {
         Connection con = null;
         PreparedStatement ps1 = null;
         PreparedStatement ps2 = null;
-        ResultSet rs = null;
         boolean exito = false;
 
         try {
@@ -129,73 +128,37 @@ public class AlumnoDAO {
                 // FASE 1: Establecer conexión con la BBDD
                 con = cn.getConnection();
 
-                // Desactivar autocommit para manejar transacción
-                con.setAutoCommit(false);
+                // FASE 2: Definir la sentencia SQL
+                String sql1 = "INSERT INTO personas(codigo, nombre) VALUES (?, ?)";
+                String sql2 = "INSERT INTO alumnos(codigo, telefono) VALUES (?, ?)";
 
-                // FASE 2: Definir las sentencias SQL
-                // Primero insertamos en la tabla persona (SIN código, es autoincremental)
-                String sql1 = "INSERT INTO persona(nombre) VALUES (?)";
-                // Luego insertamos en la tabla alumno
-                String sql2 = "INSERT INTO alumno(codigo, telefono) VALUES (?, ?)";
+                // FASE 3: Crear PreparedStatement y asignar parámetros
+                ps1 = con.prepareStatement(sql1);
+                ps1.setInt(1, alumno.getCodigo());
+                ps1.setString(2, alumno.getNombre());
 
-                // FASE 3: Crear PreparedStatement para persona con RETURN_GENERATED_KEYS
-                ps1 = con.prepareStatement(sql1, Statement.RETURN_GENERATED_KEYS);
-                ps1.setString(1, alumno.getNombre());
-
-                // FASE 4: Ejecutar INSERT en persona
-                int filasPersona = ps1.executeUpdate();
-
-                // Obtener el código autogenerado
-                int codigoGenerado = 0;
-                if (filasPersona > 0) {
-                    rs = ps1.getGeneratedKeys();
-                    if (rs.next()) {
-                        codigoGenerado = rs.getInt(1);
-                        System.out.println("Código generado para persona: " + codigoGenerado);
-                    } else {
-                        throw new SQLException("No se pudo obtener el código generado");
-                    }
-                }
-
-                // FASE 5: Insertar en alumno usando el código generado
                 ps2 = con.prepareStatement(sql2);
-                ps2.setInt(1, codigoGenerado);
+                ps2.setInt(1, alumno.getCodigo());
                 ps2.setString(2, alumno.getTelefono());
 
-                int filasAlumno = ps2.executeUpdate();
-
-                // Confirmar transacción si ambas inserciones fueron exitosas
-                if (filasPersona > 0 && filasAlumno > 0) {
-                    con.commit();
+                // FASE 4: Ejecutar la sentencia SQL
+                int filasPersonas = ps1.executeUpdate();
+                int filasAlumnos = ps2.executeUpdate();
+                if ((filasPersonas > 0) && (filasAlumnos > 0))
                     exito = true;
-                    System.out.println("Alumno agregado exitosamente con código: " + codigoGenerado);
-                } else {
-                    con.rollback();
-                    System.out.println("Error: No se pudo agregar el alumno");
-                }
+
+                System.out.println("Alumno agregado: " + alumno.toString());
             }
+            // NO HAY FASE 5: INSERT no retorna ResultSet
         } catch (SQLException e) {
             System.err.println("Error al agregar alumno: " + e.getMessage());
             e.printStackTrace();
-            // Revertir transacción en caso de error
-            try {
-                if (con != null) {
-                    con.rollback();
-                    System.err.println("Transacción revertida");
-                }
-            } catch (SQLException ex) {
-                System.err.println("Error al hacer rollback: " + ex.getMessage());
-            }
         } finally {
             try {
-                if (rs != null)
-                    rs.close();
                 if (ps1 != null)
                     ps1.close();
                 if (ps2 != null)
                     ps2.close();
-                if (con != null)
-                    con.setAutoCommit(true);
                 cn.desconectar();
             } catch (SQLException e) {
                 System.err.println("Error al cerrar recursos: " + e.getMessage());
@@ -266,7 +229,6 @@ public class AlumnoDAO {
         return exito;
     }
 
-
     // ============== ELIMINAR ALUMNO ==============
     public boolean eliminarAlumno(int codigo) {
 
@@ -282,7 +244,7 @@ public class AlumnoDAO {
 
                 // FASE 2: Definir la sentencia SQL
                 // Solo eliminamos de persona, el CASCADE eliminará de alumno automáticamente
-                String sql = "DELETE FROM persona WHERE codigo = ?";
+                String sql = "DELETE FROM personas WHERE codigo = ?";
 
                 // FASE 3: Crear PreparedStatement y asignar parámetros
                 ps = con.prepareStatement(sql);
