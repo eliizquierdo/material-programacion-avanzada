@@ -44,6 +44,15 @@ header {
     transition: transform 0.2s ease;
 }
 
+.box ul {
+    margin-left: 20px;
+    padding-left: 10px;
+}
+
+.box li {
+    margin-bottom: 5px;
+}
+
 .card:hover {
     transform: translateY(-5px);
 }
@@ -91,12 +100,28 @@ header {
 }
 
 /* CÓDIGO */
+
 pre {
     background-color: #1e272e;
     color: #f5f6fa;
     padding: 15px;
     border-radius: 8px;
     overflow-x: auto;
+    margin: 20px 0;
+}
+
+/* IMPORTANTE: no romper el pre */
+pre code {
+    background: none;
+    color: inherit;
+    padding: 0;
+}
+
+/* Código inline (solo cuando NO está dentro de pre) */
+code:not(pre code) {
+    background: #ecf0f1;
+    padding: 2px 5px;
+    border-radius: 4px;
 }
 
 code {
