@@ -114,6 +114,15 @@ header {
     margin-left: 20px;
 }
 
+.actividad ol {
+    padding-left: 25px;   /* empuja el contenido hacia la derecha */
+    margin-left: 10px;
+}
+
+.actividad li {
+    margin-bottom: 8px;
+}
+
 /* CÓDIGO */
 
 pre {
