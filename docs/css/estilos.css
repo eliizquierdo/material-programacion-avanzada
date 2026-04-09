@@ -44,15 +44,6 @@ header {
     transition: transform 0.2s ease;
 }
 
-.box ul {
-    margin-left: 20px;
-    padding-left: 10px;
-}
-
-.box li {
-    margin-bottom: 5px;
-}
-
 .card:hover {
     transform: translateY(-5px);
 }
@@ -77,54 +68,40 @@ header {
     background: #273c75;
 }
 
-/* CAJAS DIDÁCTICAS */
+/* CAJAS DIDÁCTICAS (SOLO UNA LÍNEA) */
 .box {
     background-color: #dff9fb;
-    padding: 15px 20px;
+    padding: 15px 25px;
     margin: 20px 0;
-    border-left: none;              /* quitamos la línea original */
-    position: relative;
+    border-left: 6px solid #22a6b3; /* Línea única y sólida */
 }
-
 
 .warning {
     background-color: #ffeaa7;
-    border-left: 5px solid #e17055;
-    padding: 15px;
+    border-left: 6px solid #e17055;
+    padding: 15px 25px;
     margin: 20px 0;
 }
 
 .actividad {
     background-color: #eafaf1;
-    padding: 15px 20px;
+    padding: 15px 25px;
     margin: 20px 0;
-    border-left: none;
-    position: relative;
+    border-left: 6px solid #27ae60;
 }
 
-/* línea igual que .box */
-.actividad::before {
-    content: "";
-    position: absolute;
-    left: 10px;
-    top: 0;
-    bottom: 0;
-    width: 5px;
-    background-color: #27ae60;
+/* LISTAS DENTRO DE CAJAS */
+.box ul, .box ol, 
+.warning ul, .warning ol,
+.actividad ul, .actividad ol {
+    margin: 10px 0 10px 25px;
 }
 
-/* listas */
-.actividad ul,
-.actividad ol {
-    margin-left: 25px;
-}
-
-.actividad li {
+.box li, .warning li, .actividad li {
     margin-bottom: 8px;
 }
 
 /* CÓDIGO */
-
 pre {
     background-color: #1e272e;
     color: #f5f6fa;
@@ -134,27 +111,16 @@ pre {
     margin: 20px 0;
 }
 
-/* IMPORTANTE: no romper el pre */
 pre code {
     background: none;
     color: inherit;
     padding: 0;
 }
 
-/* Código inline (solo cuando NO está dentro de pre) */
 code:not(pre code) {
     background: #ecf0f1;
     padding: 2px 5px;
     border-radius: 4px;
-}
-
-.box ul,
-.box ol {
-    margin: 10px 0 10px 30px; /* empuja TODO el bloque hacia la derecha */
-}
-
-.box li {
-    margin-bottom: 8px;
 }
 
 /* RESPONSIVE */
