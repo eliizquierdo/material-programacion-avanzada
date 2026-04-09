@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Introducción a la POO</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            background-color: #f4f6f8;
+            color: #333;
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        h1 {
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            margin-top: 30px;
+        }
+        code {
+            background-color: #ecf0f1;
+            padding: 2px 5px;
+            border-radius: 4px;
+        }
+        pre {
+            background-color: #1e272e;
+            color: #f5f6fa;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+        }
+        ul {
+            margin-left: 20px;
+        }
+        .box {
+            background-color: #dff9fb;
+            padding: 15px;
+            border-left: 5px solid #22a6b3;
+            margin: 20px 0;
+        }
+        .warning {
+            background-color: #ffeaa7;
+            border-left: 5px solid #e17055;
+        }
+        .summary {
+            background-color: #dfe6e9;
+            border-left: 5px solid #636e72;
+        }
+    </style>
+</head>
+<body>
+
+<h1>📘 Introducción a la Programación Orientada a Objetos (POO)</h1>
+
+<h2>🧠 1. ¿Qué es la Programación Orientada a Objetos?</h2>
+<p>
+La Programación Orientada a Objetos (POO) es un paradigma de programación que permite organizar el código creando <strong>objetos</strong> que representan elementos del mundo real.
+</p>
+
+<div class="box">
+<p>👉 En lugar de pensar en “pasos a seguir”, pensamos en:</p>
+<ul>
+    <li><strong>Qué cosas existen</strong> (objetos)</li>
+    <li><strong>Qué características tienen</strong> (atributos)</li>
+</ul>
+</div>
+
+<h2>🎮 2. Analogía: Videojuegos (RPG)</h2>
+<p>Imaginemos un videojuego:</p>
+<ul>
+    <li>No se programa cada personaje uno por uno</li>
+    <li>Se crea un <strong>molde (clase)</strong></li>
+    <li>Luego se crean múltiples <strong>personajes (objetos)</strong></li>
+</ul>
+
+<div class="box">
+<p>👉 Ejemplo:</p>
+<ul>
+    <li>Clase: <code>Heroe</code></li>
+    <li>Objetos: “Artigas”, “MagoOscuro”, “Guerrero1”</li>
+</ul>
+</div>
+
+<h2>🧱 3. ¿Qué es una Clase?</h2>
+<p>
+Una <strong>clase</strong> es un <strong>molde o plantilla</strong> que define cómo serán los objetos.
+</p>
+
+<p>Define:</p>
+<ul>
+    <li>Qué datos tendrán (atributos)</li>
+    <li>(Más adelante veremos métodos)</li>
+</ul>
+
+<pre>
+Heroe
+---------
+nombre : String
+clase : String
+nivel : int
+</pre>
+
+<h2>👤 4. ¿Qué es un Objeto?</h2>
+<p>
+Un <strong>objeto</strong> es una <strong>instancia de una clase</strong>.
+</p>
+
+<p>👉 Es un elemento concreto creado a partir del molde.</p>
+
+<h2>🧾 5. Atributos</h2>
+<p>Los <strong>atributos</strong> son las características o datos de un objeto.</p>
+
+<pre><code>
+public class Heroe {
+    public String nombre;
+    public String clase;
+    public int nivel;
+}
+</code></pre>
+
+<h2>🆕 6. Crear Objetos</h2>
+<p>Para crear un objeto usamos la palabra clave <code>new</code>.</p>
+
+<pre><code>
+Heroe h1 = new Heroe();
+</code></pre>
+
+<h2>✏️ 7. Asignar valores</h2>
+
+<pre><code>
+h1.nombre = "Artigas";
+h1.clase = "Guerrero";
+h1.nivel = 1;
+</code></pre>
+
+<h2>🧬 8. Identidad de los objetos</h2>
+
+<pre><code>
+Heroe h1 = new Heroe();
+Heroe h2 = new Heroe();
+
+h1.nombre = "Artigas";
+h2.nombre = "Mago";
+</code></pre>
+
+<div class="box">
+<ul>
+    <li>h1.nombre → "Artigas"</li>
+    <li>h2.nombre → "Mago"</li>
+</ul>
+<p>✔️ No se mezclan los datos</p>
+<p>✔️ Son objetos diferentes</p>
+</div>
+
+<h2>⚠️ 9. Error común</h2>
+
+<div class="box warning">
+<p>❌ Pensar que cambiar un objeto afecta a todos</p>
+<p>✔️ Cada objeto tiene su propia información</p>
+</div>
+
+<h2>🧩 10. Modelado</h2>
+<p>Antes de programar, preguntarnos:</p>
+
+<ul>
+    <li>¿Qué objeto quiero representar?</li>
+    <li>¿Qué características tiene?</li>
+    <li>¿Qué tipo de dato corresponde?</li>
+</ul>
+
+<div class="box">
+<p>Ejemplo: <code>Monstruo</code></p>
+<ul>
+    <li>especie → String</li>
+    <li>puntosVida → int</li>
+    <li>esJefeFinal → boolean</li>
+</ul>
+</div>
+
+<h2>🚀 11. Lo que viene</h2>
+<ul>
+    <li>Constructores</li>
+    <li>Encapsulamiento</li>
+    <li>Métodos</li>
+</ul>
+
+<h2>🧪 Actividad de Autoevaluación</h2>
+<ol>
+    <li>¿Qué es una clase?</li>
+    <li>¿Qué es un objeto?</li>
+    <li>¿Para qué sirve <code>new</code>?</li>
+    <li>¿Qué diferencia hay entre h1 y h2?</li>
+    <li>Inventá una clase con 3 atributos</li>
+</ol>
+
+<h2>💡 Resumen</h2>
+
+<div class="box summary">
+<ul>
+    <li>Clase = molde</li>
+    <li>Objeto = instancia</li>
+    <li>Atributos = características</li>
+    <li><code>new</code> = crea objetos</li>
+    <li>Cada objeto es independiente</li>
+</ul>
+</div>
+
+<p><strong>👉 “En POO no pensamos en pasos… pensamos en cosas que interactúan.”</strong></p>
+
+</body>
+</html>
