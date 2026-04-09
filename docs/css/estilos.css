@@ -131,9 +131,9 @@ code:not(pre code) {
 .box ul,
 .box ol {
     margin-left: 20px;
-    padding-left: 10px;
+    padding-left: 20px;
+    list-style-position: inside;
 }
-
 
 /* RESPONSIVE */
 @media (max-width: 600px) {
