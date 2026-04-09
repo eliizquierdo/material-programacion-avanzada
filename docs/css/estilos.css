@@ -80,11 +80,21 @@ header {
 /* CAJAS DIDÁCTICAS */
 .box {
     background-color: #dff9fb;
-    padding: 15px;
-    border-left: 5px solid #22a6b3;
+    padding: 15px 20px;
     margin: 20px 0;
+    border-left: none;              /* quitamos la línea original */
+    position: relative;
 }
 
+.box::before {
+    content: "";
+    position: absolute;
+    left: 10px;                    /* mueve la línea hacia adentro */
+    top: 0;
+    bottom: 0;
+    width: 5px;
+    background-color: #22a6b3;
+}
 .warning {
     background-color: #ffeaa7;
     border-left: 5px solid #e17055;
