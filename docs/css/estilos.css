@@ -109,6 +109,11 @@ header {
     margin: 20px 0;
 }
 
+.actividad ul,
+.actividad ol {
+    margin-left: 20px;
+}
+
 /* CÓDIGO */
 
 pre {
