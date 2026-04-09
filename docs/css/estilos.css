@@ -130,9 +130,11 @@ code:not(pre code) {
 
 .box ul,
 .box ol {
-    margin-left: 20px;
-    padding-left: 20px;
-    list-style-position: inside;
+    margin: 10px 0 10px 30px; /* empuja TODO el bloque hacia la derecha */
+}
+
+.box li {
+    margin-bottom: 8px;
 }
 
 /* RESPONSIVE */
