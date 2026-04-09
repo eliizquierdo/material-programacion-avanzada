@@ -124,11 +124,14 @@ code:not(pre code) {
     border-radius: 4px;
 }
 
-code {
-    background: #ecf0f1;
-    padding: 2px 5px;
-    border-radius: 4px;
+.box {
+    padding: 15px 15px 15px 20px;
 }
+
+.box ul {
+    margin-left: 15px;
+}
+
 
 /* RESPONSIVE */
 @media (max-width: 600px) {
