@@ -128,8 +128,10 @@ code:not(pre code) {
     padding: 15px 15px 15px 20px;
 }
 
-.box ul {
-    margin-left: 15px;
+.box ul,
+.box ol {
+    margin-left: 20px;
+    padding-left: 10px;
 }
 
 
