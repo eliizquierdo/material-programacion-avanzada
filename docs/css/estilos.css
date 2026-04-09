@@ -21,7 +21,7 @@ header {
     text-align: center;
 }
 
-/* CONTENEDOR */
+/* CONTENEDOR PRINCIPAL */
 .container {
     padding: 30px;
     max-width: 1000px;
@@ -68,36 +68,102 @@ header {
     background: #273c75;
 }
 
-/* CAJAS DIDÁCTICAS (SOLO UNA LÍNEA) */
+/* =========================================
+   CAJAS DIDÁCTICAS - SOLUCIÓN DOBLE LÍNEA
+   ========================================= */
+
+/* Definición general de la caja contenedora */
+.box,
+.warning,
+.actividad {
+    padding: 15px 20px;
+    margin: 20px 0;
+    position: relative;
+    /* QUITAMOS el borde nativo para que sea uniforme */
+    border-left: none;
+}
+
+/* Cajas específicas */
 .box {
     background-color: #dff9fb;
-    padding: 15px 25px;
-    margin: 20px 0;
-    border-left: 6px solid #22a6b3; /* Línea única y sólida */
 }
 
 .warning {
     background-color: #ffeaa7;
-    border-left: 6px solid #e17055;
-    padding: 15px 25px;
-    margin: 20px 0;
 }
 
 .actividad {
     background-color: #eafaf1;
-    padding: 15px 25px;
-    margin: 20px 0;
-    border-left: 6px solid #27ae60;
 }
 
-/* LISTAS DENTRO DE CAJAS */
-.box ul, .box ol, 
-.warning ul, .warning ol,
-.actividad ul, .actividad ol {
-    margin: 10px 0 10px 25px;
+/* --- Pseudo-elementos (Las líneas dobles) ---
+   IMPORTANTE: Al aplicarlos al contenedor principal,
+   ya no se duplican por cada elemento de la lista. */
+
+.box::before,
+.actividad::before,
+.warning::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 6px; /* Ancho de la línea gruesa */
 }
 
-.box li, .warning li, .actividad li {
+/* Línea interior (la fina) */
+.box::after,
+.actividad::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 3px; /* Ancho de la línea fina */
+}
+
+/* Colores de las líneas - BOX (Cian) */
+.box::before {
+    background-color: #22a6b3;
+    left: 0;
+}
+.box::after {
+    background-color: #22a6b3;
+    left: 9px; /* Separación de la línea gruesa */
+}
+
+/* Colores de las líneas - ACTIVIDAD (Verde) */
+.actividad::before {
+    background-color: #27ae60;
+    left: 0;
+}
+.actividad::after {
+    background-color: #27ae60;
+    left: 9px;
+}
+
+/* Colores de las líneas - WARNING (Naranja, solo una línea gruesa) */
+.warning::before {
+    background-color: #e17055;
+    left: 0;
+    width: 8px; /* Una sola línea más gruesa */
+}
+
+/* Desactivar ::after para warning */
+.warning::after {
+    display: none;
+}
+
+/* =========================================
+   LISTAS Y CÓDIGO DENTRO DE CAJAS
+   ========================================= */
+
+/* Listas (ul, ol) - Ajuste de márgenes */
+.box ul, .box ol,
+.actividad ul, .actividad ol,
+.warning ul, .warning ol {
+    margin: 10px 0 10px 30px; /* Empuja TODO el bloque hacia la derecha */
+}
+
+.box li, .actividad li, .warning li {
     margin-bottom: 8px;
 }
 
@@ -117,6 +183,7 @@ pre code {
     padding: 0;
 }
 
+/* Código inline (solo cuando NO está dentro de pre) */
 code:not(pre code) {
     background: #ecf0f1;
     padding: 2px 5px;
