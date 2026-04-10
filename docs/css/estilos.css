@@ -127,6 +127,29 @@ code:not(pre code) {
     border-radius: 4px;
 }
 
+/* ESTILOS PARA IMÁGENES DIDÁCTICAS */
+.img-container {
+    text-align: center;
+    margin: 20px 0;
+    background: white; /* Fondo blanco para que resalte del fondo cian de la box */
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.img-container img {
+    max-width: 100%;  /* Se adapta al ancho de la pantalla */
+    height: auto;     /* Mantiene la proporción */
+    border-radius: 4px;
+}
+
+/* Ajuste opcional para los títulos dentro de las cajas */
+.box h3 {
+    color: #273c75;
+    margin-bottom: 10px;
+}
+
+
 /* RESPONSIVE */
 @media (max-width: 600px) {
     .container {
