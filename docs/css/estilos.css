@@ -138,7 +138,7 @@ code:not(pre code) {
 }
 
 .img-container img {
-    max-width: 100%;  /* Se adapta al ancho de la pantalla */
+    max-width: 50%;  /* Se adapta al ancho de la pantalla */
     height: auto;     /* Mantiene la proporción */
     border-radius: 4px;
 }
