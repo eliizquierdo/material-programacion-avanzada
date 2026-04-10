@@ -151,6 +151,20 @@ code:not(pre code) {
     margin: 0 auto;   /* Asegura que la imagen esté centrada dentro del bloque blanco */
 }
 
+.lista-clases {
+    list-style: none; /* Quita los puntos */
+    padding: 0;
+    margin: 15px 0;
+    text-align: left;
+}
+
+.lista-clases li {
+    margin-bottom: 8px;
+    padding-bottom: 5px;
+    border-bottom: 1px dotted #ddd; /* Línea divisoria finita */
+    color: #2f3640;
+}
+
 /* RESPONSIVE */
 @media (max-width: 600px) {
     .container {
