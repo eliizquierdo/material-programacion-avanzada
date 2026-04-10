@@ -137,7 +137,7 @@ code:not(pre code) {
     border: 1px solid #ddd;
     
     /* ESTOS SON LOS CAMBIOS CLAVE: */
-    width: 60%;         /* Controla el ancho real del bloque completo */
+    width: 50%;         /* Controla el ancho real del bloque completo */
     max-width: 500px;   /* Evita que sea gigante en pantallas muy anchas */
     min-width: 280px;   /* Evita que sea diminuto en móviles */
 }
