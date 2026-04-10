@@ -127,28 +127,29 @@ code:not(pre code) {
     border-radius: 4px;
 }
 
-/* ESTILOS PARA IMÁGENES DIDÁCTICAS */
+/* ESTILOS PARA IMÁGENES DIDÁCTICAS CORREGIDOS */
 .img-container {
     text-align: center;
-    margin: 20px 0;
-    background: white; /* Fondo blanco para que resalte del fondo cian de la box */
+    margin: 20px auto; /* 'auto' centra horizontalmente el contenedor */
+    background: white; 
     padding: 15px;
     border-radius: 8px;
     border: 1px solid #ddd;
+    
+    /* ESTOS SON LOS CAMBIOS CLAVE: */
+    width: 60%;         /* Controla el ancho real del bloque completo */
+    max-width: 500px;   /* Evita que sea gigante en pantallas muy anchas */
+    min-width: 280px;   /* Evita que sea diminuto en móviles */
 }
 
+/* Regla para la imagen dentro del contenedor (Volvemos al 100%) */
 .img-container img {
-    max-width: 50%;  /* Se adapta al ancho de la pantalla */
-    height: auto;     /* Mantiene la proporción */
+    max-width: 100%;  /* La imagen usa TODO el ancho que le da su padre (que ahora es el 60%) */
+    height: auto;     
     border-radius: 4px;
+    display: block;   /* Mejora el centrado en algunos navegadores */
+    margin: 0 auto;   /* Asegura que la imagen esté centrada dentro del bloque blanco */
 }
-
-/* Ajuste opcional para los títulos dentro de las cajas */
-.box h3 {
-    color: #273c75;
-    margin-bottom: 10px;
-}
-
 
 /* RESPONSIVE */
 @media (max-width: 600px) {
