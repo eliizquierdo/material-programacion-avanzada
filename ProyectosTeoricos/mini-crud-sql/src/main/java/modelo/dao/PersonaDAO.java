@@ -10,208 +10,90 @@ public class PersonaDAO {
 
     public List<PersonaVO> listarPersonas() {
         List<PersonaVO> lista = new ArrayList<>();
+        String sql = "SELECT * FROM persona";
 
-        // FASE 1: Establecer conexión con la BBDD
-        Conexion cn = new Conexion();
-        Connection con = null;
-        PreparedStatement ps = null;
-        ResultSet rs = null;
+        try (Connection con = Conexion.obtener();
+             PreparedStatement ps = con.prepareStatement(sql);
+             ResultSet rs = ps.executeQuery()) {
 
-        try {
-            if (cn.conectar()) {
-                con = cn.getConnection();
-                // FASE 2: Definir la sentencia SQL
-                String sql = "SELECT * FROM persona";
-
-                // FASE 3: Crear PreparedStatement
-                ps = con.prepareStatement(sql);
-
-                // FASE 4: Ejecutar la sentencia SQL
-                rs = ps.executeQuery();
-
-                // FASE 5: Leer el ResultSet
-                while (rs.next()) {
-                    PersonaVO persona = new PersonaVO(
-                            rs.getInt("codigo"),
-                            rs.getString("nombre"));
-                    lista.add(persona);
-                }
+            while (rs.next()) {
+                lista.add(new PersonaVO(
+                        rs.getInt("codigo"),
+                        rs.getString("nombre")));
             }
         } catch (SQLException e) {
             System.err.println("Error al listar personas: " + e.getMessage());
             e.printStackTrace();
-        } finally {
-            // Cerrar recursos en orden inverso
-            try {
-                if (rs != null)
-                    rs.close();
-                if (ps != null)
-                    ps.close();
-                cn.desconectar();
-            } catch (SQLException e) {
-                System.err.println("Error al cerrar recursos: " + e.getMessage());
-            }
         }
         return lista;
     }
 
     public boolean agregarPersona(PersonaVO persona) {
-
-        Conexion cn = new Conexion();
-        Connection con = null;
-        PreparedStatement ps = null;
+        String sql = "INSERT INTO persona(codigo, nombre) VALUES (?, ?)";
         boolean exito = false;
 
-        try {
-            if (cn.conectar()) {
-                // FASE 1: Establecer conexión con la BBDD
-                con = cn.getConnection();
+        try (Connection con = Conexion.obtener();
+             PreparedStatement ps = con.prepareStatement(sql)) {
 
-                // FASE 2: Definir la sentencia SQL
-                String sql = "INSERT INTO persona(codigo, nombre) VALUES (?, ?)";
-
-                // FASE 3: Crear PreparedStatement y asignar parámetros
-                ps = con.prepareStatement(sql);
-                ps.setInt(1, persona.getCodigo());
-                ps.setString(2, persona.getNombre());
-
-                // FASE 4: Ejecutar la sentencia SQL
-                int filasAfectadas = ps.executeUpdate();
-                exito = filasAfectadas > 0;
-
-                System.out.println("Persona agregada: " + persona.toString());
-            }
-            // NO HAY FASE 5: INSERT no retorna ResultSet
+            ps.setInt(1, persona.getCodigo());
+            ps.setString(2, persona.getNombre());
+            exito = ps.executeUpdate() > 0;
+            System.out.println("Persona agregada: " + persona);
         } catch (SQLException e) {
             System.err.println("Error al agregar persona: " + e.getMessage());
             e.printStackTrace();
-        } finally {
-            try {
-                if (ps != null)
-                    ps.close();
-                cn.desconectar();
-            } catch (SQLException e) {
-                System.err.println("Error al cerrar recursos: " + e.getMessage());
-            }
         }
         return exito;
     }
 
     public boolean actualizarPersona(PersonaVO persona) {
-
-        Conexion cn = new Conexion();
-        Connection con = null;
-        PreparedStatement ps = null;
+        String sql = "UPDATE persona SET nombre = ? WHERE codigo = ?";
         boolean exito = false;
 
-        try {
-            if (cn.conectar()) {
-                // FASE 1: Establecer conexión con la BBDD
-                con = cn.getConnection();
+        try (Connection con = Conexion.obtener();
+             PreparedStatement ps = con.prepareStatement(sql)) {
 
-                // FASE 2: Definir la sentencia SQL
-                String sql = "UPDATE persona SET nombre = ? WHERE codigo = ?";
+            ps.setString(1, persona.getNombre());
+            ps.setInt(2, persona.getCodigo());
+            exito = ps.executeUpdate() > 0;
 
-                // FASE 3: Crear PreparedStatement y asignar parámetros
-                ps = con.prepareStatement(sql);
-                ps.setString(1, persona.getNombre());
-                ps.setInt(2, persona.getCodigo());
-
-                // FASE 4: Ejecutar la sentencia SQL
-                int filasAfectadas = ps.executeUpdate();
-                exito = filasAfectadas > 0;
-
-                if (exito) {
-                    System.out.println("Persona actualizada: " + persona.toString());
-                } else {
-                    System.out.println("No se encontró persona con código " + persona.getCodigo());
-                }
-            }
-            // NO HAY FASE 5: UPDATE no retorna ResultSet
+            if (exito) System.out.println("Persona actualizada: " + persona);
+            else System.out.println("No se encontró persona con código " + persona.getCodigo());
         } catch (SQLException e) {
             System.err.println("Error al actualizar persona: " + e.getMessage());
             e.printStackTrace();
-        } finally {
-            try {
-                if (ps != null)
-                    ps.close();
-                cn.desconectar();
-            } catch (SQLException e) {
-                System.err.println("Error al cerrar recursos: " + e.getMessage());
-            }
         }
         return exito;
     }
 
     public boolean eliminarPersona(int codigo) {
-
-        Conexion cn = new Conexion();
-        Connection con = null;
-        PreparedStatement ps = null;
+        String sql = "DELETE FROM persona WHERE codigo = ?";
         boolean exito = false;
 
-        try {
-            if (cn.conectar()) {
-                // FASE 1: Establecer conexión con la BBDD
-                con = cn.getConnection();
+        try (Connection con = Conexion.obtener();
+             PreparedStatement ps = con.prepareStatement(sql)) {
 
-                // FASE 2: Definir la sentencia SQL
-                String sql = "DELETE FROM persona WHERE codigo = ?";
+            ps.setInt(1, codigo);
+            exito = ps.executeUpdate() > 0;
 
-                // FASE 3: Crear PreparedStatement y asignar parámetros
-                ps = con.prepareStatement(sql);
-                ps.setInt(1, codigo);
-
-                // FASE 4: Ejecutar la sentencia SQL
-                int filasAfectadas = ps.executeUpdate();
-                exito = filasAfectadas > 0;
-
-                if (exito) {
-                    System.out.println("Persona con código " + codigo + " eliminada exitosamente");
-                } else {
-                    System.out.println("No se encontró persona con código " + codigo);
-                }
-            }
-            // NO HAY FASE 5: DELETE no retorna ResultSet
+            if (exito) System.out.println("Persona " + codigo + " eliminada");
+            else System.out.println("No se encontró persona con código " + codigo);
         } catch (SQLException e) {
             System.err.println("Error al eliminar persona: " + e.getMessage());
             e.printStackTrace();
-        } finally {
-            try {
-                if (ps != null)
-                    ps.close();
-                cn.desconectar();
-            } catch (SQLException e) {
-                System.err.println("Error al cerrar recursos: " + e.getMessage());
-            }
         }
         return exito;
     }
 
     public PersonaVO obtenerPersonaPorCodigo(int codigo) {
-
-        Conexion cn = new Conexion();
-        Connection con = null;
-        PreparedStatement ps = null;
-        ResultSet rs = null;
+        String sql = "SELECT * FROM persona WHERE codigo = ?";
         PersonaVO persona = null;
 
-        try {
-            if (cn.conectar()) {
-                // FASE 1: Establecer conexión con la BBDD
-                con = cn.getConnection();
+        try (Connection con = Conexion.obtener();
+             PreparedStatement ps = con.prepareStatement(sql)) {
 
-                // FASE 2: Definir la sentencia SQL
-                String sql = "SELECT * FROM persona WHERE codigo = ?";
-
-                // FASE 3: Crear PreparedStatement y asignar parámetros
-                ps = con.prepareStatement(sql);
-                ps.setInt(1, codigo);
-
-                // FASE 4: Ejecutar la sentencia SQL
-                rs = ps.executeQuery();
-
-                // FASE 5: Leer el ResultSet
+            ps.setInt(1, codigo);
+            try (ResultSet rs = ps.executeQuery()) {
                 if (rs.next()) {
                     persona = new PersonaVO(
                             rs.getInt("codigo"),
@@ -221,18 +103,7 @@ public class PersonaDAO {
         } catch (SQLException e) {
             System.err.println("Error al obtener persona: " + e.getMessage());
             e.printStackTrace();
-        } finally {
-            try {
-                if (rs != null)
-                    rs.close();
-                if (ps != null)
-                    ps.close();
-                cn.desconectar();
-            } catch (SQLException e) {
-                System.err.println("Error al cerrar recursos: " + e.getMessage());
-            }
         }
         return persona;
     }
-
 }
