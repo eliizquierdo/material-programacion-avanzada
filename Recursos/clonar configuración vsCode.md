@@ -1,4 +1,4 @@
-# 📝 Guía Completa y Chuleta: Migración de Configuración en Visual Studio Code (v2)
+# 📝 Guía Completa: Migración de Configuración en Visual Studio Code
 
 Esta guía detalla paso a paso cómo clonar tu entorno de desarrollo personalizado (configuraciones, extensiones, atajos de teclado y fragmentos de código) desde una máquina de origen a una máquina de destino sin perder ningún detalle.
 
