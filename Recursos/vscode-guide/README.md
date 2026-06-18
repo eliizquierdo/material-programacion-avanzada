@@ -73,4 +73,6 @@ Aquí tenés los ejemplos más útiles para tus clases de Java:
 
 ---
 
+> ¿Querés migrar tu configuración existente de VS Code a otra máquina? Consultá la [Guía de Migración completa](./clonar%20configuraci%C3%B3n%20vsCode.md).
+
 > **Consejo de la docente:** El objetivo de este perfil es que cuando te enfrentes a una hoja de papel o a una prueba, tu cerebro ya sepa escribir el código sin depender de que la computadora lo complete por vos. ¡A programar!
