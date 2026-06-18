@@ -77,10 +77,10 @@ Aquí tenés los ejemplos más útiles para tus clases de Java:
 
 > **Consejo de la docente:** El objetivo de este perfil es que cuando te enfrentes a una hoja de papel o a una prueba, tu cerebro ya sepa escribir el código sin depender de que la computadora lo complete por vos. ¡A programar!
 >
-> <div align="center">
-
-***
-
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licencia Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a> 
-#### **Prof. Elizabeth Izquierdo**
+<div style="text-align: center; margin: 20px 0;">
+    <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+        <img alt="Licencia Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" />
+    </a>
+    <br />
+    <span style="font-weight: bold; font-family: sans-serif;">Prof. Elizabeth Izquierdo</span>
 </div>
