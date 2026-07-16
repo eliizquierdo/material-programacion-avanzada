@@ -1,4 +1,2 @@
-# Material-programación avanzada
-Material teórico y práctico para estudiantes de Programación avanzada de BT 2025.
-
-El teórico se ve en la wiki
+# material_programacion_avanzada2026
+Material para los estudiantes de Programación avanzada de BT Tecnologías de la información
